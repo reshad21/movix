@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import dayjs from "dayjs";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import "./style.scss";
 
-import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
-import useFetch from "../../../hooks/useFetch";
-import Genres from "../../../components/genres/Genres";
-import CircleRating from "../../../components/circleRating/CircleRating";
-import Img from "../../../components/lazyLoadImage/Img.jsx";
 import PosterFallback from "../../../assets/no-poster.png";
-import { PlayIcon } from "../Playbtn";
+import CircleRating from "../../../components/circleRating/CircleRating";
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
+import Genres from "../../../components/genres/Genres";
+import Img from "../../../components/lazyLoadImage/Img.jsx";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
+import useFetch from "../../../hooks/useFetch";
+import { PlayIcon } from "../Playbtn";
 
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);
@@ -66,11 +66,10 @@ const DetailsBanner = ({ video, crew }) => {
                                     </div>
                                     <div className="right">
                                         <div className="title">
-                                            {`${
-                                                data.name || data.title
-                                            } (${dayjs(
-                                                data?.release_date
-                                            ).format("YYYY")})`}
+                                            {`${data.name || data.title
+                                                } (${dayjs(
+                                                    data?.release_date
+                                                ).format("YYYY")})`}
                                         </div>
                                         <div className="subtitle">
                                             {data.tagline}
@@ -93,7 +92,7 @@ const DetailsBanner = ({ video, crew }) => {
                                             >
                                                 <PlayIcon />
                                                 <span className="text">
-                                                    Watch Trailer
+                                                    Watch Now
                                                 </span>
                                             </div>
                                         </div>
